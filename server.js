@@ -37,12 +37,12 @@ app.use((req, res, next) => {
 });
 
 // another piece of middleware to call a script in case we are in the the maintaincnce of a website, it will stop the execution 
-// of every other script because it doenst have next();
-        // app.use((req, res, next) => {
-        //     res.render('maintainance.hbs', {
-        //         welcomeMessage: 'We"ll be right back'
-        //     })
-        // });
+//of every other script because it doenst have next();
+        app.use((req, res, next) => {
+            res.render('maintainance.hbs', {
+                welcomeMessage: 'We"ll be right back'
+            })
+        });
 
 // __dirname stores absolute path of the root folder, so we just concatinate the public directory where html page is stored
 // it is valid for each and every redirect for html or other pages 
