@@ -3,6 +3,7 @@ var fs = require('fs');
 // tp create an express app , all we have to do is to call the express method
 var hbs = require('hbs');
 var app = express();
+const port = process.env.PORT || 3000;
 //partials are the templates that are frequently used in any dynamic webpages
 hbs.registerPartials(__dirname + '/views/partials');
 
@@ -77,7 +78,7 @@ app.get('/about', (req, res) => {
 });
 
 // bind the application and listen to incoming requests on a specified port
-app.listen(3000, () => {
-    console.log('server is up and running on port 3000');
+app.listen(port, () => {
+    console.log('server is up and running on port: ', port);
 });
 
